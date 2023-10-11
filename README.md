@@ -2,8 +2,8 @@
 
 ## Description
 
-This app allows a user to keep track of an entire employee network. Users have the ability to easily view all departments, roles and employees in their system. 
-Additionally, users can update employee's roles and assign employee managaers to a group of employees. 
+This app allows a user to keep track of an entire employee network. Users have the ability to easily view all departments, roles and employees in their system.
+Additionally, users can update employee's roles and assign employee managaers to a group of employees.
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
