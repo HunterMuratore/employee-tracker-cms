@@ -7,7 +7,14 @@ const db = mysql.createConnection(
       password: 'pass',
       database: 'employee_tracker'
     },
-    console.log(`Connected to the employee_tracker database.\n`)
 );
 
-module.exports = { db };
+db.connect((err) => {
+  if (err) {
+    console.error('Error connecting to the database: ' + err.message);
+  } else {
+    console.log('Connected to the employee_tracker database.');
+  }
+});
+
+module.exports = db;

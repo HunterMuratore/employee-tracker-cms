@@ -2,7 +2,10 @@ const inquirer = require('inquirer');
 const db = require('../db/db');
 
 function addEmployee() {
-    inquirer
+    db.query('SELECT * FROM roles;', (err, roles) => {
+        if (err) throw err
+
+        inquirer
         .prompt({
             name: 'first_name',
             message: 'What is the employee\'s first name?'
@@ -34,6 +37,7 @@ function addEmployee() {
             });
             mainMenu();
         });
+    });    
 }
 
-module.exports = { addEmployee };
+module.exports = addEmployee;

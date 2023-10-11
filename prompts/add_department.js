@@ -20,4 +20,4 @@ function addDepartment() {
         });
 }
 
-module.exports = { addDepartment };
+module.exports = addDepartment;

@@ -30,4 +30,4 @@ function addRole() {
         });
 }
 
-module.exports = { addRole };
+module.exports = addRole;

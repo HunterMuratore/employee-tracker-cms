@@ -1,11 +1,11 @@
 const fs = require('fs');
-const inquirer = require('inquirer');
-const db = require('./db/db');
 const { addDepartment, addRole, addEmployee, updateEmployee } = require('./prompts');
 const { viewTable } = require('./queries');
+const inquirer = require('inquirer');
+console.log(viewTable, addDepartment, addEmployee, addRole, updateEmployee);
 
 // Create an array that will hold all of the queries from query.sql
-const sqlQueries = fs.readFileSync('./db/query.sql', 'utf-8').split(';');
+// const sqlQueries = fs.readFileSync('./db/query.sql', 'utf-8').split(';');
 
 function init() {
     mainMenu();
@@ -19,7 +19,7 @@ function mainMenu() {
             message: 'What would you like to do?',
             choices: ['View all departments', 'View all roles', 'View all employees', 'Add a department', 'Add a role', 'Add an employee', 'Update an employee role']
         }).then((answer) => {
-            switch (answer) {
+            switch (answer.options) {
                 case 'View all departments':
                     viewTable('departments');
                     break;

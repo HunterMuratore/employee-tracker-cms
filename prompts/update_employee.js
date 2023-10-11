@@ -21,4 +21,4 @@ function updateEmployee() {
         });
 }
 
-module.exports = { updateEmployee };
+module.exports = updateEmployee;

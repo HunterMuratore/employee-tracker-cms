@@ -9,4 +9,4 @@ function viewTable (table) {
     mainMenu();
 }
 
-module.exports = { viewTable }
+module.exports = viewTable;
