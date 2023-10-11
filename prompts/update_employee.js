@@ -17,8 +17,7 @@ function updateEmployee() {
         }).then((answer) => {
             // Update employee in the database
             console.log(`Updated ${answer.firstName} ${answer.lastName}'s role`);
-            mainMenu();
         });
 }
 
-module.exports = { updateEmployee };
+module.exports = updateEmployee;

@@ -16,11 +16,17 @@ function addRole() {
             name: 'department',
             message: 'Which department does the role belong to?',
             choices: ['department'] // Show all departments from the db
-        }).then((answer) => {
+        }).then((answers) => {
             // Add role to the database
-            console.log(`Added ${answer.role} to the database`);
-            mainMenu();
+            const { role, salary, department } = answers;
+            const sql = 'INSERT INTO roles (role, salary, department) VALUES (?, ?, ?)';
+            const params = [role, salary, department];
+      
+            db.query(sql, params, (err, results) => {
+              if (err) console.error('Error adding role:', err);
+                console.log(`Successfully added ${role} to the database`);
+            });
         });
 }
 
-module.exports = { addRole };
+module.exports = addRole;

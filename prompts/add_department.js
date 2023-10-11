@@ -6,11 +6,17 @@ function addDepartment() {
         .prompt({
             name: 'department',
             message: 'What is the name of the department?'
-        }).then((answer) => {
+        }).then((answers) => {
             // Add department to the database
-            console.log(`Added ${answer.department} to the database`);
-            mainMenu();
+            const { department } = answers;
+            const sql = 'INSERT INTO departments (name) VALUES (?)';
+            const params = [department];
+      
+            db.query(sql, params, (err, results) => {
+              if (err) console.error('Error adding department:', err);
+                console.log(`Successfully added ${department} to the database`);
+            });
         });
 }
 
-module.exports = { addDepartment };
+module.exports = addDepartment;
