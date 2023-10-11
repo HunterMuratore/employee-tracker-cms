@@ -1,4 +1,4 @@
-const db = require('../db/db');
+const { db } = require('../db/db');
 
 function viewTable (table, callback) {
     db.query(`SELECT * FROM ${table};`, (err, result) => {

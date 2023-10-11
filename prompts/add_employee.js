@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const db = require('../db/db');
+const { db } = require('../db/db');
 
 function addEmployee(callback) {
     db.query('SELECT * FROM roles;', (err, roles) => {
