@@ -1,5 +1,3 @@
-USE employee_tracker;
-
 -- Get all employees by roles
 SELECT
     e.first_name,
