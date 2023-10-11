@@ -1,12 +1,12 @@
 const inquirer = require('inquirer');
 const db = require('../db/db');
 
-function addEmployee() {
+function addEmployee(callback) {
     db.query('SELECT * FROM roles;', (err, roles) => {
         if (err) throw err
 
         inquirer
-        .prompt({
+        .prompt([{
             name: 'first_name',
             message: 'What is the employee\'s first name?'
         },
@@ -25,7 +25,7 @@ function addEmployee() {
             name: 'manager',
             message: 'Who is the employee\'s manager?',
             choices: ['manager'] // Show all employees from the db
-        }).then((answers) => {
+        }]).then((answers) => {
             // Add employee to the database
             const { first_name, last_name, role, manager } = answers;
             const sql = 'INSERT INTO employees (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)';
@@ -35,6 +35,8 @@ function addEmployee() {
               if (err) return console.error('Error adding employee:', err);
                 
               console.log(`Successfully added ${first_name} ${last_name} to the database`);
+
+              callback();
             });
         });
     });    

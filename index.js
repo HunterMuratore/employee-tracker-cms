@@ -2,15 +2,16 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const { addDepartment, addRole, addEmployee, updateEmployee } = require('./prompts');
 const { viewTable } = require('./queries');
+const { checkConnection } = require('./db/db');
 
 // Create an array that will hold all of the queries from query.sql
 // const sqlQueries = fs.readFileSync('./db/query.sql', 'utf-8').split(';');
 
 function init() {
-    mainMenu();
+    checkConnection(() => mainMenu());
 }
 
-async function mainMenu() {
+function mainMenu() {
     inquirer
         .prompt({
             type: 'list',

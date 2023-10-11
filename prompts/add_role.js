@@ -1,9 +1,9 @@
 const inquirer = require('inquirer');
 const db = require('../db/db');
 
-function addRole() {
+function addRole(callback) {
     inquirer
-        .prompt({
+        .prompt([{
             name: 'role',
             message: 'What is the name of the role?'
         },
@@ -16,7 +16,7 @@ function addRole() {
             name: 'department',
             message: 'Which department does the role belong to?',
             choices: ['department'] // Show all departments from the db
-        }).then((answers) => {
+        }]).then((answers) => {
             // Add role to the database
             const { role, salary, department } = answers;
             const sql = 'INSERT INTO roles (role, salary, department) VALUES (?, ?, ?)';
@@ -26,6 +26,8 @@ function addRole() {
               if (err) return console.error('Error adding role:', err);
             
               console.log(`Successfully added ${role} to the database`);
+
+              callback();
             });
         });
 }

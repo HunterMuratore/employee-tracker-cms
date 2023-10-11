@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const db = require('../db/db');
 
-function addDepartment() {
+function addDepartment(callback) {
     inquirer
         .prompt({
             name: 'department',
@@ -16,6 +16,8 @@ function addDepartment() {
               if (err) return console.error('Error adding department:', err);
                 
               console.log(`Successfully added ${department} to the database`);
+              
+              callback();
             });
         });
 }
