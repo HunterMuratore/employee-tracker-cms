@@ -32,8 +32,9 @@ function addEmployee() {
             const params = [first_name, last_name, role, manager];
       
             db.query(sql, params, (err, results) => {
-              if (err) console.error('Error adding employee:', err);
-                console.log(`Successfully added ${first_name} ${last_name} to the database`);
+              if (err) return console.error('Error adding employee:', err);
+                
+              console.log(`Successfully added ${first_name} ${last_name} to the database`);
             });
         });
     });    

@@ -23,8 +23,9 @@ function addRole() {
             const params = [role, salary, department];
       
             db.query(sql, params, (err, results) => {
-              if (err) console.error('Error adding role:', err);
-                console.log(`Successfully added ${role} to the database`);
+              if (err) return console.error('Error adding role:', err);
+            
+              console.log(`Successfully added ${role} to the database`);
             });
         });
 }

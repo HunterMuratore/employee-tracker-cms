@@ -13,8 +13,9 @@ function addDepartment() {
             const params = [department];
       
             db.query(sql, params, (err, results) => {
-              if (err) console.error('Error adding department:', err);
-                console.log(`Successfully added ${department} to the database`);
+              if (err) return console.error('Error adding department:', err);
+                
+              console.log(`Successfully added ${department} to the database`);
             });
         });
 }
