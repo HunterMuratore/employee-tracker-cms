@@ -1,19 +1,22 @@
 const mysql = require('mysql2');
 
+function checkConnection(callback) {
+  db.connect((err) => {
+    if (err) {
+      console.error('\nError connecting to the database: ' + err.message);
+    } else {
+      console.log('\nConnected to the employee_tracker database.\n\n');
+      callback();
+    }
+  });
+}
+
 const db = mysql.createConnection(
-    {
-      host: 'localhost', 
-      user: 'root',
-      database: 'employee_tracker'
-    },
+  {
+    host: 'localhost', 
+    user: 'root',
+    database: 'employee_tracker'
+  },
 );
 
-db.connect((err) => {
-  if (err) {
-    console.error('Error connecting to the database: ' + err.message);
-  } else {
-    console.log('Connected to the employee_tracker database.');
-  }
-});
-
-module.exports = db;
+module.exports = { db, checkConnection }

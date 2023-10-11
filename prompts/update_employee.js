@@ -1,9 +1,9 @@
 const inquirer = require('inquirer');
 const db = require('../db/db');
 
-function updateEmployee() {
+function updateEmployee(callback) {
     inquirer
-        .prompt({
+        .prompt([{
             type: 'list',
             name: 'employee',
             message: 'which employee\'s role do you want to update?',
@@ -14,9 +14,11 @@ function updateEmployee() {
             name: 'manager',
             message: 'which role do you want to assign the selected employee?',
             choices: ['roles'] // Show all roles from the db
-        }).then((answer) => {
+        }]).then((answer) => {
             // Update employee in the database
             console.log(`Updated ${answer.firstName} ${answer.lastName}'s role`);
+
+            callback();
         });
 }
 
