@@ -26,7 +26,6 @@ function addRole() {
               if (err) console.error('Error adding role:', err);
                 console.log(`Successfully added ${role} to the database`);
             });
-            mainMenu();
         });
 }
 

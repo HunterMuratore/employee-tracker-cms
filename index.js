@@ -1,7 +1,7 @@
 const fs = require('fs');
+const inquirer = require('inquirer');
 const { addDepartment, addRole, addEmployee, updateEmployee } = require('./prompts');
 const { viewTable } = require('./queries');
-const inquirer = require('inquirer');
 console.log(viewTable, addDepartment, addEmployee, addRole, updateEmployee);
 
 // Create an array that will hold all of the queries from query.sql
@@ -42,6 +42,7 @@ function mainMenu() {
                     updateEmployee();
                     break;
             }
+            mainMenu();
         });
 }
 

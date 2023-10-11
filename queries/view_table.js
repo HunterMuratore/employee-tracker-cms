@@ -6,7 +6,6 @@ function viewTable (table) {
 
         console.log(result);
     });
-    mainMenu();
 }
 
 module.exports = viewTable;

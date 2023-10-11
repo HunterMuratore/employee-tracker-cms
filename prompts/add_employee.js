@@ -35,7 +35,6 @@ function addEmployee() {
               if (err) console.error('Error adding employee:', err);
                 console.log(`Successfully added ${first_name} ${last_name} to the database`);
             });
-            mainMenu();
         });
     });    
 }

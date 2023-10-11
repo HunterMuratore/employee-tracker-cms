@@ -16,7 +16,6 @@ function addDepartment() {
               if (err) console.error('Error adding department:', err);
                 console.log(`Successfully added ${department} to the database`);
             });
-            mainMenu();
         });
 }
 
