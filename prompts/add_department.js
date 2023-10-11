@@ -12,3 +12,5 @@ function addDepartment() {
             mainMenu();
         });
 }
+
+module.exports = { addDepartment };

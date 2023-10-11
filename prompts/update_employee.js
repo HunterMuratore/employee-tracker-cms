@@ -20,3 +20,5 @@ function updateEmployee() {
             mainMenu();
         });
 }
+
+module.exports = { updateEmployee };

@@ -22,3 +22,5 @@ function addRole() {
             mainMenu();
         });
 }
+
+module.exports = { addRole };
