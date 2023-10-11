@@ -1,5 +1,6 @@
 const mysql = require('mysql2');
 
+// Check the database connection before starting the prompts
 function checkConnection(callback) {
   db.connect((err) => {
     if (err) {
