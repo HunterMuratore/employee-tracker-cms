@@ -1,6 +1,7 @@
 const { db } = require('../db/db');
 
 function viewTable (table, callback) {
+    // Get the table the user is looking for in the database
     db.query(`SELECT * FROM ${table};`, (err, result) => {
         if (err) throw err;
 

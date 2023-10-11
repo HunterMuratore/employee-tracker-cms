@@ -16,7 +16,7 @@ function updateEmployee(callback) {
             choices: ['roles'] // Show all roles from the db
         }]).then((answer) => {
             // Update employee in the database
-            console.log(`Updated ${answer.firstName} ${answer.lastName}'s role`);
+            console.log(`\nUpdated ${answer.firstName} ${answer.lastName}'s role\n`);
 
             callback();
         });

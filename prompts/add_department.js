@@ -7,15 +7,15 @@ function addDepartment(callback) {
             name: 'department',
             message: 'What is the name of the department?'
         }).then((answers) => {
-            // Add department to the database
             const { department } = answers;
             const sql = 'INSERT INTO departments (name) VALUES (?)';
             const params = [department];
-      
+            
+            // Add department to the database
             db.query(sql, params, (err, results) => {
               if (err) return console.error('Error adding department:', err);
                 
-              console.log(`Successfully added ${department} to the database`);
+              console.log(`\nSuccessfully added ${department} to the database\n`);
               
               callback();
             });
