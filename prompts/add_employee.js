@@ -4,11 +4,11 @@ const db = require('../db/db');
 function addEmployee() {
     inquirer
         .prompt({
-            name: 'firstName',
+            name: 'first_name',
             message: 'What is the employee\'s first name?'
         },
         {
-            name: 'lastName',
+            name: 'last_name',
             message: 'What is the employee\'s last name?'
         },
         {
@@ -22,7 +22,7 @@ function addEmployee() {
             name: 'manager',
             message: 'Who is the employee\'s manager?',
             choices: ['manager'] // Show all employees from the db
-        }).then((answer) => {
+        }).then((answers) => {
             // Add employee to the database
             const { first_name, last_name, role, manager } = answers;
             const sql = 'INSERT INTO employees (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)';
@@ -30,7 +30,7 @@ function addEmployee() {
       
             db.query(sql, params, (err, results) => {
               if (err) console.error('Error adding employee:', err);
-                console.log(`Successfully added ${answer.firstName} ${answer.lastName} to the database`);
+                console.log(`Successfully added ${first_name} ${last_name} to the database`);
             });
             mainMenu();
         });
