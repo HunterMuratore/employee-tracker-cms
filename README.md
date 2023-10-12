@@ -21,9 +21,11 @@ Additionally, users can update employee's roles and assign employee managers to 
 
 2. Run `npm install` to install all dependencies
 
-3. Run `npm start` to start the app
+3. Open MySQL and create your database by running `SOURCE schema.sql`
 
-4. Manage your employee network with ease!
+4. Run `npm start` to start the app
+
+5. Manage your employee network with ease!
 
 ## Usage
 
