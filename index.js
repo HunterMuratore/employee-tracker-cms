@@ -1,11 +1,7 @@
-const fs = require('fs');
 const inquirer = require('inquirer');
 const { addDepartment, addRole, addEmployee, updateEmployee } = require('./prompts');
-const { viewTable } = require('./queries');
+const { viewDepartments, viewEmployees, viewRoles } = require('./queries');
 const { checkConnection } = require('./db/db');
-
-// Create an array that will hold all of the queries from query.sql
-// const sqlQueries = fs.readFileSync('./db/query.sql', 'utf-8').split(';');
 
 function init() {
     checkConnection(() => mainMenu());
@@ -29,13 +25,13 @@ function mainMenu() {
 function handleMenuOption(option) {
     switch (option) {
         case 'View all departments':
-            viewTable('departments', () => mainMenu());
+            viewDepartments(() => mainMenu());
             break;
         case 'View all roles':
-            viewTable('roles', () => mainMenu());
+            viewRoles(() => mainMenu());
             break;
         case 'View all employees':
-            viewTable('employees', () => mainMenu());
+            viewEmployees(() => mainMenu());
             break;
         case 'Add a department':
             addDepartment(() => mainMenu());
