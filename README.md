@@ -31,7 +31,7 @@ Additionally, users can update employee's roles and assign employee managers to 
 
 This app can be used to track an entire employee network including the departments, roles, employees and managers within that network.
 
-<!-- [![Employee Tracker CMS Demo](https://img.youtube.com/vi/5JQXrNX0GIA/maxresdefault.jpg)](https://youtu.be/watch?v=5JQXrNX0GIA) -->
+[![Employee Tracker CMS Demo](https://img.youtube.com/vi/_p4VuwSBbm4/maxresdefault.jpg)](https://youtu.be/watch?v=_p4VuwSBbm4)
 >Click the image to be taken to this app's demo video on youtube
 
 ## License
